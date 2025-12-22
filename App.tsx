@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -140,7 +140,7 @@ const App: React.FC = () => {
                   <div className="mt-6 pt-6 border-t border-gray-50 flex items-center justify-between">
                     <div>
                       <span className="text-xs text-gray-400 block uppercase font-bold">
-                        Investimento
+                        A partir de
                       </span>
                       <span className="text-2xl font-bold text-gray-900 font-kids">
                         R$ {service.price}
@@ -252,13 +252,13 @@ const App: React.FC = () => {
               {/* Foto 1 - Estação Colorida */}
               <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=400&h=600&auto=format&fit=crop"
+                  src="assets/oaf.png"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   alt="Complexo do Salgueiro"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                   <span className="text-white font-bold text-sm">
-                    📍 Complexo do Salgueiro
+                    📍 Inauguração OAF - Jardim Catarina
                   </span>
                   <span className="text-pink-300 text-[10px] uppercase font-bold">
                     Estação de Pipoca & Algodão
@@ -269,16 +269,16 @@ const App: React.FC = () => {
               {/* Foto 2 - Trenzinho */}
               <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1533035350221-afc03314058e?q=80&w=400&h=600&auto=format&fit=crop"
+                  src="assets/samcordis.png"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  alt="Sapê Niterói"
+                  alt="Hospital Samcordis, São Gonçalo"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                   <span className="text-white font-bold text-sm">
-                    📍 Sapê, Niterói
+                    📍 Hospital Samcordis, São Gonçalo
                   </span>
                   <span className="text-blue-300 text-[10px] uppercase font-bold">
-                    Trenzinho de Lanches
+                    Estação de Açai
                   </span>
                 </div>
               </div>
@@ -286,16 +286,16 @@ const App: React.FC = () => {
               {/* Foto 4 - Espaço Casarão */}
               <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4] md:col-span-2 lg:col-span-1">
                 <img
-                  src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=400&h=600&auto=format&fit=crop"
+                  src="assets/ideale.png"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   alt="Espaço Casarão Maricá"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                   <span className="text-white font-bold text-sm">
-                    📍 Espaço Casarão, Maricá
+                    📍 Ideale Eventos
                   </span>
                   <span className="text-yellow-300 text-[10px] uppercase font-bold">
-                    Combo Completo
+                    Estação de Açai
                   </span>
                 </div>
               </div>
@@ -303,67 +303,16 @@ const App: React.FC = () => {
               {/* Foto 9 - OAF Inflável */}
               <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=400&h=600&auto=format&fit=crop"
+                  src="assets/casasbahia.png"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  alt="Jardim Catarina"
+                  alt="Casas Bahia, São Gonçalo"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                   <span className="text-white font-bold text-sm">
-                    📍 Jardim Catarina
+                    📍 Casas Bahia, São Gonçalo
                   </span>
                   <span className="text-red-300 text-[10px] uppercase font-bold">
-                    Inauguração OAF
-                  </span>
-                </div>
-              </div>
-
-              {/* Foto 6 - Casa Amarela */}
-              <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1504118544055-53e89f2a99d2?q=80&w=400&h=600&auto=format&fit=crop"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  alt="Casa Amarela"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-white font-bold text-sm">
-                    📍 Casa Amarela
-                  </span>
-                  <span className="text-purple-300 text-[10px] uppercase font-bold">
-                    Salão de Festas
-                  </span>
-                </div>
-              </div>
-
-              {/* Foto 8 - Estação Hot Dog */}
-              <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1541232399669-e347521e118f?q=80&w=400&h=600&auto=format&fit=crop"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  alt="Cachorro Quente"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-white font-bold text-sm">
-                    📍 Evento Corporativo
-                  </span>
-                  <span className="text-orange-300 text-[10px] uppercase font-bold">
-                    Estação Cachorro Quente
-                  </span>
-                </div>
-              </div>
-
-              {/* Foto 3 - Lanchinhos Close */}
-              <div className="group relative overflow-hidden rounded-[35px] shadow-lg aspect-[3/4]">
-                <img
-                  src="https://images.unsplash.com/photo-1594212699903-ec8a3ecc50f6?q=80&w=400&h=600&auto=format&fit=crop"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  alt="Lanchinhos"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-white font-bold text-sm">
-                    📍 Qualidade Thatá
-                  </span>
-                  <span className="text-green-300 text-[10px] uppercase font-bold">
-                    Mini Lanchinhos Artesanais
+                    Estação de Pipoca & Algodão
                   </span>
                 </div>
               </div>

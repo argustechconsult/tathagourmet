@@ -39,4 +39,4 @@ export const PROMOS: PromoItem[] = [
   }
 ];
 
-export const WHATSAPP_NUMBER = '5521971070109'; // Phone from one of the images
+export const WHATSAPP_NUMBER = '5521971670109'; // Phone from one of the images

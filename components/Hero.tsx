@@ -1,4 +1,4 @@
-//import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -13,6 +13,15 @@ const Hero: React.FC = () => {
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
@@ -61,31 +70,86 @@ const Hero: React.FC = () => {
         </div>
         <div className="relative">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-yellow-200 rounded-full blur-3xl opacity-40 animate-pulse"></div>
-          <div className="grid grid-cols-2 gap-4 relative z-10">
-            <div className="space-y-4">
-              <img
-                src="/assets/Hero1.jpeg"
-                alt="Pipoca Festa"
-                className="w-full h-[400px] object-cover rounded-[40px] shadow-2xl border-4 border-white"
-              />
-              <div className="bg-white p-4 rounded-3xl shadow-lg border border-pink-50">
-                <p className="font-bold text-pink-500 text-center text-sm uppercase">
-                  Atendimento Premium
-                </p>
+          <div className="relative h-[400px] w-full rounded-[40px] shadow-2xl border-4 border-white overflow-hidden group">
+            {[
+              '/assets/trem1.png',
+              '/assets/trem2.png',
+              '/assets/trem3.png',
+              '/assets/trem4.png',
+            ].map((src, index) => (
+              <div
+                key={src}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={src}
+                  alt={`Trenzinho ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
+            ))}
+
+            {/* Indicadores (Dots) */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+              {[0, 1, 2, 3].map((idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === idx
+                      ? 'bg-pink-500 w-6'
+                      : 'bg-white/70 hover:bg-white'
+                  }`}
+                  aria-label={`Ir para imagem ${idx + 1}`}
+                />
+              ))}
             </div>
-            <div className="space-y-4 pt-12">
-              <img
-                src="/assets/Hero2.jpeg"
-                alt="Trenzinho"
-                className="w-full h-[400px] object-cover rounded-[40px] shadow-2xl border-4 border-white"
-              />
-              <div className="bg-white p-4 rounded-3xl shadow-lg border border-pink-50">
-                <p className="font-bold text-pink-500 text-center text-sm uppercase">
-                  Trenzinho de Lanches
-                </p>
-              </div>
-            </div>
+
+            {/* Setas de Navegação (opcional, mas bom para UX) */}
+            <button
+              onClick={() =>
+                setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1))
+              }
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() =>
+                setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1))
+              }
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import { WHATSAPP_NUMBER } from '../constants';
 
 const Footer: React.FC = () => {
@@ -31,22 +31,27 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/thatagourmet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center hover:text-pink-500 transition-colors"
               >
                 <span className="sr-only">Instagram</span>
-                📸
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center hover:text-pink-500 transition-colors"
-              >
-                <span className="sr-only">Facebook</span>
-                👤
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
               </a>
             </div>
           </div>
@@ -63,7 +68,7 @@ const Footer: React.FC = () => {
                   href={`tel:${WHATSAPP_NUMBER}`}
                   className="hover:text-pink-500 transition-colors"
                 >
-                  (21) 97107-0109
+                  (21) 97167-0109
                 </a>
               </li>
             </ul>
