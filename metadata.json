@@ -1,0 +1,7 @@
+{
+  "name": "Thatá Gourmet - Estações para Eventos",
+  "description": "Landing page profissional para contratação de estações gourmet para eventos, com calculadora de orçamento integrada e portfólio completo.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
