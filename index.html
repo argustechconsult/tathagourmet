@@ -36,6 +36,16 @@
         /* Cores vibrantes do trenzinho real: Azul, Amarelo e Vermelho */
         background: linear-gradient(to right, #0077c8 33%, #ffce00 33%, #ffce00 66%, #e4002b 66%);
       }
+      
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+        width: fit-content;
+      }
     </style>
   <body class="bg-white text-gray-800">
     <div id="root"></div>
